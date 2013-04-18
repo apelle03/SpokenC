@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int *foo(float *b) {
+int foo(float *b) {
     return (int)*b;
 }
 

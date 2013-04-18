@@ -1,55 +1,38 @@
 #include <stdio.h>
 #include <stdio.h>
 
+int *foo(float *b) {
+  fprintf(stderr, "test.c:3:call(foo)\n");
+  fprintf(stderr, "test.c:3:decl(float*,b)\n");
+  fprintf(stderr, "test.c:3:assign(float*,b,%p)\n", b);
+  int *____1 = (int) (*b);
+  fprintf(stderr, "test.c:4:return(foo,int*,ret,%p)\n", ____1);
+  return ____1;
+  fprintf(stderr, "test.c:5:return(foo,int*,ret,undef)\n", );
+}
+
+
 void main(int x, char **y) {
-  fprintf(stderr, "test.c:4:scope_in\n");
-  int ____0 = 0;
-  fprintf(stderr, "test.c:4:decl(int,i)\n");
-  fprintf(stderr, "test.c:4:assign(int,i,%d)\n", ____0);
-  for (int i = ____0; i < 10; (i++) | (fprintf(stderr, "test.c:4:assign(int,i,%d)\n", i + 1) == 0))
+  fprintf(stderr, "test.c:7:call(main)\n");
+  fprintf(stderr, "test.c:7:decl(int,x)\n");
+  fprintf(stderr, "test.c:7:assign(int,x,%d)\n", x);
+  fprintf(stderr, "test.c:7:decl(char**,y)\n");
+  fprintf(stderr, "test.c:7:assign(char**,y,%p)\n", y);
+  int i;
+  fprintf(stderr, "test.c:8:decl(int,i)\n");
+  fprintf(stderr, "test.c:8:assign(int,i,%d)\n", i);
+  fprintf(stderr, "test.c:9:scope_in\n");
+  float ____0 = 0;
+  fprintf(stderr, "test.c:9:decl(float,i)\n");
+  fprintf(stderr, "test.c:9:assign(float,i,%f)\n", ____0);
+  for (float i = ____0; i < 1; (i++) | (fprintf(stderr, "test.c:9:assign(float,i,%f)\n", i + 1) == 0))
   {
-    switch (i)
-    {
-      case 1:
-        if (1)
-      {
-        fprintf(stderr, "test.c:7:scope_in\n");
-        int d = 1;
-        fprintf(stderr, "test.c:8:decl(int,d)\n");
-        fprintf(stderr, "test.c:8:assign(int,d,%d)\n", d);
-        int e = 10;
-        fprintf(stderr, "test.c:8:decl(int,e)\n");
-        fprintf(stderr, "test.c:8:assign(int,e,%d)\n", e);
-        int f;
-        fprintf(stderr, "test.c:8:decl(int,f)\n");
-        fprintf(stderr, "test.c:8:assign(int,f,%d)\n", f);
-        d++;
-        fprintf(stderr, "test.c:9:assign(int,d,%d)\n", d);
-        fprintf(stderr, "test.c:7:scope_out\n");
-      }
-
-        break;
-
-    }
-
-    if (1)
-    {
-      fprintf(stderr, "test.c:13:scope_in\n");
-      int d = 1;
-      fprintf(stderr, "test.c:14:decl(int,d)\n");
-      fprintf(stderr, "test.c:14:assign(int,d,%d)\n", d);
-      int e = 10;
-      fprintf(stderr, "test.c:14:decl(int,e)\n");
-      fprintf(stderr, "test.c:14:assign(int,e,%d)\n", e);
-      int f;
-      fprintf(stderr, "test.c:14:decl(int,f)\n");
-      fprintf(stderr, "test.c:14:assign(int,f,%d)\n", f);
-      d += e;
-      fprintf(stderr, "test.c:15:assign(int,d,%d)\n", d);
-      fprintf(stderr, "test.c:13:scope_out\n");
-    }
-
+    i = 3;
+    fprintf(stderr, "test.c:10:assign(float,i,%f)\n", i);
   }
 
-  fprintf(stderr, "test.c:4:scope_out\n");
+  fprintf(stderr, "test.c:9:scope_out\n");
+  i = 3;
+  fprintf(stderr, "test.c:12:assign(int,i,%d)\n", i);
+  fprintf(stderr, "test.c:13:return(main,void,ret,undef)\n", );
 }

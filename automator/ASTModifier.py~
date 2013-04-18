@@ -47,7 +47,7 @@ def makeVarDecl(decl, init):
         decl.quals,
         decl.storage,
         decl.funcspec,
-        copy.deepcopy(decl.type),
+        decl.type,
         init,
         decl.bitsize
     )

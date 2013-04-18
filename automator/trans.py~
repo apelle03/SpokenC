@@ -280,7 +280,7 @@ def main_process(filename = None):
                     'file' : str(topLevelDecl.coord).split(':')[0],
                     'line' : int(str(topLevelDecl.coord).split(':')[1]) }
             endPos = getClosingSymbolLocation('{', '}', srcText, getFunctionLocation(srcText, func)[0])
-            func['endLine'] = srcText.count('\n', 0, endPos) + 1
+            func['endLine'] = srcText.count('\n', 0, endPos)
             ASTModifier.addFunction(func)
     pp.pprint(ASTModifier.getFunctions())
     print("================================================================")

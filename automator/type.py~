@@ -5,7 +5,7 @@ from ast import *
 #=================================================================================
 def getType(node):
     typeInfo = {};
-    typeInfo['declname'] = node.name
+    typeInfo['declname'] = node.declname
     typeInfo['ptr_level'] = 0
     node = node.type
     while nodeType(node) == "PtrDecl":
