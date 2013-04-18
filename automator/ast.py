@@ -14,5 +14,5 @@ def getAst(filename):
                     use_cpp = True,
                     cpp_path = '/usr/bin/cpp',
                     cpp_args = [ r'-I./utils/fake_libc_include' ], )
-    ast.show(showcoord = True)
+    #ast.show(showcoord = True)
     return ast

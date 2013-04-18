@@ -1,0 +1,15 @@
+test_files/test.c:7:call(main)
+test_files/test.c:7:decl(int,x)
+test_files/test.c:7:assign(int,x,1)
+test_files/test.c:7:decl(char**,y)
+test_files/test.c:7:assign(char**,y,0xbf936984)
+test_files/test.c:8:decl(float,i)
+test_files/test.c:8:assign(float,i,0.000000)
+test_files/test.c:9:scope_in
+test_files/test.c:9:decl(int,i)
+test_files/test.c:9:assign(int,i,0)
+test_files/test.c:10:assign(int,i,3)
+test_files/test.c:9:assign(int,i,4)
+test_files/test.c:9:scope_out
+test_files/test.c:12:assign(float,i,3.000000)
+test_files/test.c:13:return(main,void,ret,undef)

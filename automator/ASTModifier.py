@@ -76,17 +76,21 @@ def makeFuncReturnLog(coord, func, returnName = None):
     logString = '"{0}:{1}:return({2},{3},ret,'.format(
                 file, line, func['name'], getTypeString(type))
     if returnName == None:
-        retVar = None
         logString = logString + 'undef)\\n"'
+        return c_ast.FuncCall(
+        c_ast.ID('fprintf'),
+        c_ast.ExprList([
+            c_ast.ID('stderr'),
+            c_ast.Constant('string', logString)
+        ]))
     else:
         logString = logString + '{0})\\n"'.format(getTypeFormatString(type))
-        retVar = c_ast.ID(returnName)
-    return c_ast.FuncCall(
+        return c_ast.FuncCall(
         c_ast.ID('fprintf'),
         c_ast.ExprList([
             c_ast.ID('stderr'),
             c_ast.Constant('string', logString),
-            retVar
+            c_ast.ID(returnName)
         ]))
 
 def makeDeclLog(coord, declname):

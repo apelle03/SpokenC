@@ -5,12 +5,12 @@ from ast import *
 #=================================================================================
 def getType(node):
     typeInfo = {};
-    typeInfo['declname'] = node.name
     typeInfo['ptr_level'] = 0
-    node = node.type
-    while nodeType(node) == "PtrDecl":
-        typeInfo['ptr_level'] = typeInfo['ptr_level'] + 1
+    while nodeType(node) != 'TypeDecl':
+        if nodeType(node) == 'PtrDecl' or nodeType(node) == 'ArrayDecl':
+            typeInfo['ptr_level'] = typeInfo['ptr_level'] + 1
         node = node.type
+    typeInfo['declname'] = node.declname
     typeInfo['type'] = node.type.names[0]
     for type in node.type.names[1:]:
         typeInfo['type'] = typeInfo['type'] + ' ' + type
