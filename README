@@ -1,0 +1,43 @@
+SpokenC -- Andrew Pellegrini - Master's Project s2013
+=====================================================
+
+SpokenC consists of 2 tools, the automation tool and the visualization tool. The
+automation tool can be found in the folder 'automator' and the visualization tool
+can be found in the folder 'visualizer'.
+
+The automation tool is written in python and requires python 2.7 or above to run.
+No installation is necessary just place the entire 'automator' folder somwhere on
+your system and make sure 'cpp' is installed. Then run with the command:
+
+$python spokenc.py <source file>
+
+This will produce a new file called 'source file-dbg.c'. This file can then be
+compiled and run using gcc like any other C program
+
+The visualization tool is written in Java and requires Java 7. It was written as
+an eclipse project and would be easiest to run bu importing it into eclipse and
+running from there. Alternatively it can be compiled using 'javac' like any other
+java program.
+
+The visualization tool supports 2 modes in the program flow view, picking and
+transforming. Picking is selected by default and allows the user to select a node
+and view the call stack. Transforming mode allows the user to pan and zoom using the
+mouse and wheel. To switch to transforming mode, type 't' or use the menu item. To
+switch to picking mode, type 'p' or use the menu item.
+
+Kown Issues
+=====================================================
+1. The automation tool does not gracefully handle single statements where block
+   statements can be used. This is the case for 'if', 'for', 'while' and 'dowhile'
+   statements.
+2. Only integer types can be used in loop counters or assignments within a loop
+   condition. Because of the compound expression that is generated with a bitwise or
+   only integer types can be used.
+3. The pycparser library cannot generate code for functions that have void as a
+   parameter. This will cause a program crash and is a known bug in pycparser.
+4. The visualization tool does not yet handle the 'undef' value that is reported
+   from fall through return logging. These should be changed to any integer value
+   before trying to be visualized.
+5. The visualization tool does support hex values for pointers, but cannot handle
+   the '0x' prefix that is printed when a '%p' is used to log a pointer value. These
+   prefixes should be removed before trying to visualize this data.
