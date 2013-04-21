@@ -1,0 +1,4 @@
+main.c:1:call(main)
+main.c:1:decl(int,x)
+main.c:1:assign(int,x,10)
+main.c:1:return(main,int,0)

@@ -1,0 +1,12 @@
+main.c:1:main:argc,int,1:argv,char*,test
+main.c:2:x,int,1
+main.c:3:y,char,a
+main.c:4:x,int,2
+main.c:5:y,char,b
+main.c:4:x,int,4
+main.c:5:y,char,c
+main.c:4:x,int,8
+main.c:5:y,char,d
+main.c:4:x,int,16
+main.c:5:y,char,e
+main.c:4:main:ret,int,16
