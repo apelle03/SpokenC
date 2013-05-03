@@ -14,6 +14,10 @@ public class VarValue {
 		this.name = name;
 		if (type == VarType._string || type == VarType._char || type == VarType._signed_char || type == VarType._unsigned_char) {
 			this.value = new StringValue(value);
+		} else if (type == VarType._pointer) {
+			this.value = new IntegerValue(value, 16);
+		} else if (type == VarType._float ||type == VarType._double) {
+			this.value = new FloatValue(value);
 		} else {
 			this.value = new IntegerValue(value);
 		}

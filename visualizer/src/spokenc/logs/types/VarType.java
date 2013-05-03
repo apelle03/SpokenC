@@ -15,6 +15,9 @@ public enum VarType {
 	_long_long				("long long"),
 	_unsigned_long_long		("unsigned long long"),
 	
+	_float		("float"),
+	_double		("double"),
+	
 	_int8_t		("int8_t"),
 	_uint8_t	("uint8_t"),
 	_int16_t	("int16_t"),
@@ -41,6 +44,9 @@ public enum VarType {
 				if (text.equalsIgnoreCase(type.text)) {
 					return type;
 				}
+			}
+			if (text.contains("*")) {
+				return VarType._pointer;
 			}
 		}
 		return null;

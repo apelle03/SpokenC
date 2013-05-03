@@ -10,8 +10,12 @@ public class IntegerValue extends Value {
 	}
 	
 	public IntegerValue(String value) {
+		this(value, 10);
+	}
+	
+	public IntegerValue(String value, int radix) {
 		if (value != null) {
-			this.value = new BigInteger(value);
+			this.value = new BigInteger(value, radix);
 		} else {
 			this.value = null;
 		}

@@ -409,13 +409,13 @@ public class Visualizer extends JFrame {
 		mnuHelp.add(itemAbout);
 		menuBar.add(mnuHelp);
 		
-		logChooser = new JFileChooser(new File("C:\\Users\\Andrew\\Programming\\Java Projects\\CS171\\logs"));
+		logChooser = new JFileChooser(new File(".\\logs"));
 		FileNameExtensionFilter logFilter = new FileNameExtensionFilter("log files", "log");
 		logChooser.setFileFilter(logFilter);
 		logChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		logChooser.setMultiSelectionEnabled(false);
 		
-		sourceChooser = new JFileChooser(new File("C:\\Users\\Andrew\\Programming\\Java Projects\\CS171\\logs"));
+		sourceChooser = new JFileChooser(new File(".\\logs"));
 		sourceChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		logChooser.setMultiSelectionEnabled(false);
 	}
